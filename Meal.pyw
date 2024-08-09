@@ -1,3 +1,4 @@
+# Editor : I love dormitory cafeteria !
 import requests
 from bs4 import BeautifulSoup
 import tkinter as tk
@@ -23,6 +24,7 @@ if response.status_code == 200:
         columns = row.find_all('td')
         menu.append([column.get_text(strip=True) for column in columns])
         
+       
     # 요일별 식사 변수 설정
     # 월요일부터 일요일까지
     weekly_menu = {
@@ -81,7 +83,7 @@ if response.status_code == 200:
 
     # tkinter 기본 창 숨기기
     root = tk.Tk()
-    root.withdraw()  # 기본 창 숨기기
+    root.withdraw()  
 
     # 사용자 정의 경고창 생성
     def show_custom_warning(message):
@@ -93,8 +95,8 @@ if response.status_code == 200:
         label.pack(padx=30, pady=30)
 
         # 확인 버튼 생성 (글자 크기 조정)
-        button = tk.Button(custom_warning, text="야미~", command=custom_warning.destroy, 
-                           width=8, height=1, font=("Arial", 30))  
+        button = tk.Button(custom_warning, text="확인", command=root.quit, 
+                           width=8, height=1, font=("Arial", 30))  # root.quit로 변경
         button.pack(pady=20)
 
         custom_warning.mainloop()
