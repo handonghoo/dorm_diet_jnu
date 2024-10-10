@@ -10,7 +10,7 @@ url = 'https://dormitory.jnu.ac.kr/Board/Board.aspx?BoardID=2'
 # GET 요청으로 페이지 가져오기
 response = requests.get(url)
 
-# 요청이 성공했는지 확인
+# 요청이 성공했는지 확인 
 if response.status_code == 200:
     # 페이지 내용 파싱
     soup = BeautifulSoup(response.content, 'html.parser')
