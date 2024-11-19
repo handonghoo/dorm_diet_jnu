@@ -1,6 +1,9 @@
-dinner_menue = input("빅스비> ")
+import numpy as np
 
-if dinner_menue == "저녁":
-    print("오늘 저녁 메뉴는 {}입니다.".format("물냉면"))
-else:
-    print("헛소리하지 마라 휴먼")
+
+c = [[0, 1, 2, 0, 0, 0],
+     [3, 4, 5, 0, 0, 0],
+     [6, 7, 8, 0, 0, 0]]
+
+cc = np.delete(c, (0), axis=0)
+print(cc)

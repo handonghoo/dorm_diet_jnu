@@ -10,14 +10,14 @@ url = 'https://dormitory.jnu.ac.kr/Board/Board.aspx?BoardID=2'
 # GET 요청으로 페이지 가져오기
 response = requests.get(url)
 
-# 요청이 성공했는지 확인
+# 요청한 내용이 성공적으로 처리되었는지 확인
 if response.status_code == 200:
-    # 페이지 내용 파싱
+    # 페이지 소스를 BeautifulSoup을 사용해 파싱
     soup = BeautifulSoup(response.content, 'html.parser')
-    
-    # 식단표를 찾는 부분 
-    menu_table = soup.find('table')  
-    
+
+    # 식단표를 포함하는 테이블 찾기
+    menu_table = soup.find('table', class_='color')
+
     # 식단 내용 추출
     menu = []
     for row in menu_table.find_all('tr'):
